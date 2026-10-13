@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>targil kita 1</title>  
+</head>
+<body dir="rtl">
+   הזן קלט:
+    <input id=tx1 value="" /><br />
+    <button id=btn1 onclick="clean();">נקה </button> 
+    <button id=btn2 onclick="identify1();"> זהה סוג 1 </button> 
+    <button id=btn3 onclick="identify2();">זהה סוג 2 </button> 
+    <button id=btn4 onclick="identify_advance();">זהה סוג מתקדם </button>
+    <hr/>
+    <div id=rslt>
+    </div>
+    <script>
+        function clean() {
+            document.getElementById("tx1").value = "";
+            document.getElementById("rslt").innerHTML = "";
+            console.log("my job 1");
+        }
+        function identify1() {
+            const t = document.getElementById("tx1").value;
+            // If empty, print empty
+            if (t == "")
+                document.getElementById("rslt").innerHTML = "חסר נתון הקלט";
+            // If not number
+            else if (!isNaN(t))
+                document.getElementById("rslt").innerHTML = "לא הוזן מספר";
+            // If number
+            else
+                document.getElementById("rslt").innerHTML = "הוזן מספר";
+            console.log("my job 2");
+        }
+        function identify2() {
+            const t = document.getElementById("tx1").value;
+            // If empty, print empty
+            if (t == "")
+                document.getElementById("rslt").innerHTML = "חסר נתון הקלט";
+            // If not number
+            else if (!isNaN(t))
+                document.getElementById("rslt").innerHTML = "לא הוזן מספר";
+            // If number, convert to parseint
+            else
+            {
+                parseInt(t);
+                // Check to see if its an odd or an even number
+                if (t / 2 == 0)
+                {
+                    document.getElementById("rslt").innerHTML = "הוזן מספר זוגי";
+                }
+                else
+                {
+                    document.getElementById("rslt").innerHTML = "הוזן מספר אי-זוגי";
+                }
+            }
+            console.log("my job 3");
+        }
+        // TODO
+        function identify_advance() {
+            console.log("my job 4");
+        }
+    </script>
+</body>
+</html>
