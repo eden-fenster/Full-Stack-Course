@@ -26,7 +26,7 @@
             if (t == "")
                 document.getElementById("rslt").innerHTML = "חסר נתון הקלט";
             // If not number
-            else if (!isNaN(t))
+            else if (isNaN(t))
                 document.getElementById("rslt").innerHTML = "לא הוזן מספר";
             // If number
             else
@@ -39,14 +39,14 @@
             if (t == "")
                 document.getElementById("rslt").innerHTML = "חסר נתון הקלט";
             // If not number
-            else if (!isNaN(t))
+            else if (isNaN(t))
                 document.getElementById("rslt").innerHTML = "לא הוזן מספר";
             // If number, convert to parseint
             else
             {
                 parseInt(t);
                 // Check to see if its an odd or an even number
-                if (t / 2 == 0)
+                if (t % 2 == 0)
                 {
                     document.getElementById("rslt").innerHTML = "הוזן מספר זוגי";
                 }
@@ -64,13 +64,13 @@
             if (t == "")
                 document.getElementById("rslt").innerHTML = "חסר נתון הקלט";
             // If not number
-            else if (!isNaN(t))
+            else if (isNaN(t))
                 document.getElementById("rslt").innerHTML = "לא הוזן מספר";
             // Check if integer or float
-            else if (!Number.isInteger(t))
-                document.getElementById("rslt").innerHTML = "מספר עשרוני";
-            else
+            else if (Number.isInteger(parseInt(t)))
                 document.getElementById("rslt").innerHTML = "מספר שלם";
+            else
+                document.getElementById("rslt").innerHTML = "מספר עשרוני";
             console.log("my job 4");
         }
     </script>
